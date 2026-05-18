@@ -2019,9 +2019,8 @@ footer.site-footer {
 .bg-dark .btn-ghost:hover,
 .bg-darkest .btn-ghost:hover { color: var(--tan); }
 
-/* Keep the question visible when answer is showing */
-.faq-row.open .faq-msg-question,
-.faq-row.typing .faq-msg-question {
+/* Keep the question visible at all times — open, typing, or collapsed */
+.faq-row .faq-msg-question {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -2030,4 +2029,14 @@ footer.site-footer {
   margin-bottom: 16px !important;
   overflow: visible !important;
   pointer-events: auto !important;
+  transform: none !important;
+}
+
+/* Make sure the row itself doesn't collapse to zero height when closed */
+.faq-row {
+  display: block !important;
+  max-height: none !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
