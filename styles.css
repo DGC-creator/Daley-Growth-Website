@@ -2018,3 +2018,16 @@ footer.site-footer {
 /* Ghost button on dark — hover color */
 .bg-dark .btn-ghost:hover,
 .bg-darkest .btn-ghost:hover { color: var(--tan); }
+
+/* Keep the question visible when answer is showing */
+.faq-row.open .faq-msg-question,
+.faq-row.typing .faq-msg-question {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  margin-bottom: 16px !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
