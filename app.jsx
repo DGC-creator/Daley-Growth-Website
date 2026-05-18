@@ -1699,7 +1699,7 @@ function FAQ() {
                     semantics + interactive role are both preserved. */}
                 <div className="faq-msg faq-msg-question">
                   <div className="faq-sender">
-                    <span className="faq-sender-name">Founder asked</span>
+                    <span className="faq-sender-name">Client asked</span>
                   </div>
                   <h3 className="faq-q-wrap">
                     <button
