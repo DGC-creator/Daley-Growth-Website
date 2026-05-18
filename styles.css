@@ -2046,3 +2046,17 @@ footer.site-footer {
   gap: 32px !important;
   align-items: center !important;
 }
+
+/* Tighten the gap between FAQ and final CTA */
+.faq {
+  padding-bottom: 60px !important;
+}
+#contact {
+  padding-top: 80px !important;
+}
+
+/* Subtle background shift so the CTA feels like a moment of its own */
+#contact {
+  background: #4a2a1f !important;
+  border-top: 1px solid rgba(212, 165, 116, 0.15) !important;
+}
