@@ -2040,3 +2040,9 @@ footer.site-footer {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* More breathing room between sender label and question bubble */
+.faq-msg-question {
+  gap: 32px !important;
+  align-items: center !important;
+}
