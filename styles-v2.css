@@ -2758,3 +2758,45 @@ footer.site-footer {
 /* Ghost button on dark — hover color */
 .bg-dark .btn-ghost:hover,
 .bg-darkest .btn-ghost:hover { color: var(--tan); }
+
+/* Keep the question visible at all times — open, typing, or collapsed */
+.faq-row .faq-msg-question {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  margin-bottom: 16px !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+/* Make sure the row itself doesn't collapse to zero height when closed */
+.faq-row {
+  display: block !important;
+  max-height: none !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* More breathing room between sender label and question bubble */
+.faq-msg-question {
+  gap: 32px !important;
+  align-items: center !important;
+}
+
+/* Tighten the gap between FAQ and final CTA */
+.faq {
+  padding-bottom: 60px !important;
+}
+#contact {
+  padding-top: 80px !important;
+}
+
+/* Subtle background shift so the CTA feels like a moment of its own */
+#contact {
+  background: #4a2a1f !important;
+  border-top: 1px solid rgba(212, 165, 116, 0.15) !important;
+}
