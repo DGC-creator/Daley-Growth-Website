@@ -1,0 +1,2192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press &amp; Media — Daley Growth Consulting</title>
+  <meta name="description" content="Press kit, podcast appearances, writing, and speaking from Ann-Marie Berdar-Daley and Daley Growth Consulting. Download headshot, logos, bios, and one-liner for media use." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Italiana stands in for TAN HARMONI (paid). Cormorant Garamond for serif body. Manrope as fallback to Glacial Indifference. -->
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles-v2.css?v=7" />
+
+  <style>
+    /* ===== Media page — local additions on top of styles-v2.css ===== */
+
+    .media-hero {
+      padding: 160px 0 120px;
+      position: relative;
+      overflow: hidden;
+      /* Yellow brand field — TAN #ECBD6B as primary, deepened in the lower
+         right by a warm bronze radial so the page doesn't read as flat. */
+      background:
+        radial-gradient(120% 90% at 92% 110%, rgba(160, 62, 37, 0.20), transparent 55%),
+        radial-gradient(80% 70% at 8% -10%, rgba(247, 238, 228, 0.55), transparent 60%),
+        #ECBD6B;
+      color: var(--espresso);
+      isolation: isolate;
+    }
+    /* Push the hero content inward — larger gutter on the left so the
+       headline sits closer to the optical center of the page. */
+    .media-hero .wrap {
+      padding-left: clamp(56px, 16vw, 280px);
+      padding-right: clamp(32px, 6vw, 140px);
+      max-width: 1280px;
+    }
+    /* Decorative inset frame — a subtle dashed border that traces the
+       inside of the hero, echoing the orbital ring motif. */
+    .media-hero-frame {
+      position: absolute;
+      inset: 36px;
+      border: 1px dashed rgba(89, 44, 27, 0.28);
+      border-radius: 18px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .media-hero-frame::before,
+    .media-hero-frame::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 1px solid rgba(89, 44, 27, 0.45);
+      background: #ECBD6B;
+    }
+    .media-hero-frame::before { top: -7px; left: -7px;  border-radius: 50%; }
+    .media-hero-frame::after  { bottom: -7px; right: -7px; border-radius: 50%; }
+    @media (max-width: 720px) {
+      .media-hero-frame { inset: 14px; border-radius: 12px; }
+      .media-hero .wrap { padding-left: 28px; padding-right: 22px; }
+    }
+    .media-hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(56px, 8.2vw, 124px);
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      margin: 22px 0 28px;
+      max-width: 14ch;
+      color: var(--orange);
+      /* Brown outline + rust fill — matches the Daley wordmark treatment.
+         paint-order:stroke fill paints the stroke first then the fill on
+         top so letterforms stay readable instead of getting eaten. */
+      -webkit-text-stroke: 2px var(--espresso);
+      paint-order: stroke fill;
+      text-shadow: 0 3px 0 rgba(89, 44, 27, 0.18);
+    }
+    @media (max-width: 720px) {
+      .media-hero h1 { -webkit-text-stroke-width: 1.4px; }
+    }
+    .media-hero .lede {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 60ch;
+      color: #5a2e1d;
+      opacity: 0.92;
+    }
+    .media-hero .eyebrow {
+      color: var(--orange);
+    }
+    .media-hero .eyebrow::before {
+      background: var(--orange);
+    }
+
+    /* ===== Animated background layers for the yellow hero =====
+       Newspaper-style halftone field + slowly drifting brand-color
+       shapes + concentric broadcast "radio waves" emanating from the
+       upper-right corner. Press/media-themed, not the old contour drift. */
+    .media-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Layer 1 — halftone dot field, espresso on yellow, slowly drifting */
+    .mh-halftone {
+      position: absolute;
+      inset: -40px;
+      background-image:
+        radial-gradient(circle, rgba(89, 44, 27, 0.22) 1.4px, transparent 2px);
+      background-size: 28px 28px;
+      animation: mhHalfDrift 36s linear infinite;
+      opacity: 0.72;
+      mix-blend-mode: multiply;
+      mask-image: radial-gradient(120% 100% at 50% 60%, #000 55%, transparent 100%);
+      -webkit-mask-image: radial-gradient(120% 100% at 50% 60%, #000 55%, transparent 100%);
+    }
+    @keyframes mhHalfDrift {
+      0%   { background-position: 0 0; }
+      100% { background-position: -56px 28px; }
+    }
+
+    /* Layer 2 — broadcast "radio waves" emanating from upper-right.
+       Three concentric rings expand & fade in a 5s cycle, staggered. */
+    .mh-broadcast {
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 720px;
+      height: 720px;
+      pointer-events: none;
+    }
+    .mh-wave {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(89, 44, 27, 0.32);
+      transform: scale(0.05);
+      opacity: 0;
+      animation: mhWave 5.2s cubic-bezier(.2,.7,.2,1) infinite;
+    }
+    .mh-wave-1 { animation-delay: 0s;    border-color: rgba(89, 44, 27, 0.40); }
+    .mh-wave-2 { animation-delay: 1.6s;  border-color: rgba(160, 62, 37, 0.36); }
+    .mh-wave-3 { animation-delay: 3.2s;  border-color: rgba(135, 172, 186, 0.40); }
+    .mh-wave-anchor {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--espresso);
+      box-shadow: 0 0 0 4px rgba(247, 238, 228, 0.5);
+    }
+    @keyframes mhWave {
+      0%   { transform: scale(0.05); opacity: 0;    }
+      8%   { opacity: 0.9; }
+      85%  { opacity: 0;    }
+      100% { transform: scale(1.05); opacity: 0;    }
+    }
+
+    /* Layer 3 — three large drifting bauhaus shapes in brand colors */
+    .mh-shape {
+      position: absolute;
+      border-radius: 50%;
+      mix-blend-mode: multiply;
+      will-change: transform;
+    }
+    .mh-shape-1 {
+      width: 380px; height: 380px;
+      top: -90px; left: -110px;
+      background: radial-gradient(circle at 35% 35%, rgba(160, 62, 37, 0.42), rgba(160, 62, 37, 0.18) 70%, transparent 100%);
+      animation: mhDrift1 22s ease-in-out infinite alternate;
+    }
+    .mh-shape-2 {
+      width: 240px; height: 240px;
+      bottom: -50px; left: 24%;
+      background: radial-gradient(circle at 50% 50%, rgba(89, 44, 27, 0.30), rgba(89, 44, 27, 0.10) 70%, transparent 100%);
+      animation: mhDrift2 28s ease-in-out infinite alternate;
+    }
+    .mh-shape-3 {
+      width: 300px; height: 300px;
+      top: 38%; left: 56%;
+      background: radial-gradient(circle at 50% 50%, rgba(135, 172, 186, 0.38), rgba(135, 172, 186, 0.12) 70%, transparent 100%);
+      animation: mhDrift3 32s ease-in-out infinite alternate;
+    }
+    @keyframes mhDrift1 {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(60px, 40px) scale(1.08); }
+    }
+    @keyframes mhDrift2 {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-50px, -30px) scale(1.12); }
+    }
+    @keyframes mhDrift3 {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-70px, 50px) scale(0.92); }
+    }
+
+    /* Layer 4 — thin horizontal scan line that sweeps top to bottom slowly,
+       like a teleprompter / broadcast monitor sweep */
+    .mh-scan {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(89, 44, 27, 0.35) 50%, transparent 100%);
+      opacity: 0.6;
+      animation: mhScan 14s ease-in-out infinite;
+    }
+    @keyframes mhScan {
+      0%   { top: 0%;  opacity: 0; }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.6; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    /* Soft horizon glow at the bottom edge to transition into the cream
+       press-kit section below. */
+    .mh-horizon {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 140px;
+      background: linear-gradient(180deg, transparent 0%, rgba(247, 238, 228, 0.35) 60%, rgba(247, 238, 228, 0.55) 100%);
+      pointer-events: none;
+    }
+
+    /* Disable the inherited dark-section texture (contours over espresso). */
+    .media-hero.no-texture::before { display: none !important; }
+
+    @media (max-width: 720px) {
+      .mh-broadcast { width: 420px; height: 420px; top: -40px; right: -80px; }
+      .mh-shape-1 { width: 240px; height: 240px; }
+      .mh-shape-2 { width: 180px; height: 180px; }
+      .mh-shape-3 { width: 200px; height: 200px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mh-halftone, .mh-wave, .mh-shape, .mh-scan { animation: none !important; }
+      .mh-wave { opacity: 0.5; transform: scale(0.6); }
+      .mh-wave-2 { transform: scale(0.78); }
+      .mh-wave-3 { transform: scale(0.95); }
+    }
+
+    .back-bar {
+      position: absolute;
+      top: 60px;
+      left: 64px;
+      z-index: 50;
+    }
+    @media (max-width: 720px) {
+      .back-bar { top: 30px; left: 30px; }
+    }
+    .back-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--espresso);
+      opacity: .92;
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid rgba(89, 44, 27, 0.28);
+      border-radius: 999px;
+      background: rgba(247, 238, 228, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: opacity .2s ease, border-color .2s ease, background-color .2s ease;
+    }
+    .back-bar a:hover { opacity: 1; border-color: var(--espresso); background: rgba(247, 238, 228, 0.85); }
+    .back-bar .arr { transition: transform .25s ease; }
+    .back-bar a:hover .arr { transform: translateX(-3px); }
+    @media (max-width: 720px) {
+      .back-bar a { padding: 8px 12px; font-size: 11px; }
+    }
+
+    /* Hero wordmark on the right */
+    .media-brand-row {
+      position: absolute;
+      top: 52px;
+      right: 64px;
+      z-index: 5;
+    }
+    .media-brand-row img {
+      width: 200px;
+      height: 88px;
+      object-fit: contain;
+      object-position: right center;
+    }
+    @media (max-width: 720px) {
+      .media-brand-row { top: 30px; right: 30px; }
+      .media-brand-row img { width: 130px; height: 56px; }
+    }
+
+    /* ===== PRESS KIT (the centerpiece) ===== */
+    .kit-section { padding: 120px 0 140px; }
+    @media (max-width: 720px) { .kit-section { padding: 80px 0 96px; } }
+
+    .kit-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 920px) {
+      .kit-head { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .kit-head h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(44px, 6vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.005em;
+      margin-top: 14px;
+      color: var(--ink);
+    }
+    .kit-head .kit-intro {
+      font-size: 16.5px;
+      line-height: 1.6;
+      color: var(--muted-on-cream);
+      max-width: 52ch;
+    }
+
+    .kit-download-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border: 1px solid var(--orange);
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 6px 22px -10px rgba(160, 62, 37, 0.55);
+    }
+    .kit-download-all:hover {
+      background: var(--orange-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px -10px rgba(160, 62, 37, 0.7);
+    }
+    .kit-download-all:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+    .kit-download-all svg { width: 14px; height: 14px; }
+
+    /* --- Asset grid (headshot + logos) --- */
+    .kit-assets {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 920px) {
+      .kit-assets { grid-template-columns: 1fr 1fr; }
+      .kit-assets .kit-asset.headshot { grid-column: 1 / -1; }
+    }
+    @media (max-width: 560px) {
+      .kit-assets { grid-template-columns: 1fr; }
+    }
+
+    .kit-asset {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--hairline-light);
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .kit-asset:hover {
+      transform: translateY(-3px);
+      border-color: rgba(160, 62, 37, 0.35);
+      box-shadow: 0 14px 36px -22px rgba(89, 44, 27, 0.45);
+    }
+
+    .kit-asset-preview {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .kit-asset.headshot .kit-asset-preview { aspect-ratio: 4 / 5; }
+    .kit-asset.headshot .kit-asset-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+    }
+    .kit-asset.logo-yellow .kit-asset-preview {
+      background: #ECBD6B;
+    }
+    .kit-asset.logo-cream .kit-asset-preview {
+      background: var(--cream-deep);
+    }
+    .kit-asset.logo-yellow .kit-asset-preview img,
+    .kit-asset.logo-cream .kit-asset-preview img {
+      width: 78%;
+      height: 78%;
+      object-fit: contain;
+    }
+
+    .kit-asset-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px;
+      border-top: 1px solid var(--hairline-light);
+      background: var(--cream);
+    }
+    .kit-asset-meta .lbl {
+      display: block;
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .kit-asset-meta .sub {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-on-cream);
+      opacity: .8;
+    }
+    .kit-asset-meta a.dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(89, 44, 27, 0.22);
+      background: transparent;
+      color: var(--orange);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .kit-asset-meta a.dl:hover {
+      background: var(--orange);
+      color: var(--cream);
+      border-color: var(--orange);
+    }
+    .kit-asset-meta a.dl svg { width: 11px; height: 11px; }
+
+    /* --- Bios + one-liner --- */
+    .kit-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 920px) { .kit-copy { grid-template-columns: 1fr; } }
+
+    .kit-copy-card {
+      position: relative;
+      padding: 30px 32px 34px;
+      border-radius: 14px;
+      border: 1px solid var(--hairline-light);
+      background: var(--cream);
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+    .kit-copy-card:hover {
+      border-color: rgba(160, 62, 37, 0.35);
+      box-shadow: 0 14px 36px -22px rgba(89, 44, 27, 0.4);
+    }
+    .kit-copy-card.tall { grid-column: 1 / -1; }
+    @media (min-width: 921px) {
+      .kit-copy-card.tall { grid-column: 1 / -1; }
+    }
+
+    .kit-copy-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .kit-copy-head .lbl-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .kit-copy-head .kind {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+    }
+    .kit-copy-head .meta {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--muted-on-cream);
+      opacity: .75;
+    }
+    .kit-copy-head .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(89, 44, 27, 0.22);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .kit-copy-head .copy-btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+    .kit-copy-head .copy-btn.copied {
+      background: var(--orange);
+      color: var(--cream);
+      border-color: var(--orange);
+    }
+    .kit-copy-head .copy-btn svg { width: 12px; height: 12px; }
+
+    .kit-copy-card .body {
+      font-family: var(--serif-text);
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+    .kit-copy-card .body p { margin: 0 0 14px; }
+    .kit-copy-card .body p:last-child { margin-bottom: 0; }
+    .kit-copy-card.oneliner .body {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.8vw, 34px);
+      line-height: 1.18;
+      letter-spacing: -0.005em;
+    }
+
+    /* --- Stacked column wrapper (col 1 gets short bio + assets + recognition) --- */
+    .kit-copy-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    /* --- Press kit assets panel (compact rack) --- */
+    .kit-assets-panel,
+    .kit-recognition {
+      position: relative;
+      padding: 26px 30px 28px;
+      border-radius: 14px;
+      border: 1px solid var(--hairline-light);
+      background: var(--cream);
+    }
+
+    .kit-mini-label {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(22px, 2vw, 28px);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin: 0 0 20px;
+      color: var(--orange);
+      /* Same espresso outline + rust fill as the page headline. */
+      -webkit-text-stroke: 1.3px var(--espresso);
+      paint-order: stroke fill;
+      text-shadow: 0 2px 0 rgba(89, 44, 27, 0.16);
+    }
+
+    .kit-rack {
+      display: flex;
+      flex-direction: column;
+    }
+    .kit-rack-row {
+      padding: 16px 0;
+      border-top: 1px dashed rgba(89, 44, 27, 0.22);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .kit-rack-row:first-child { border-top: 0; padding-top: 4px; }
+    .kit-rack-row:last-child { padding-bottom: 0; }
+
+    .kit-rack-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .kit-rack-head .kit-rack-lbl {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-on-cream);
+      opacity: .85;
+      font-weight: 600;
+    }
+    .kit-rack-head .kit-rack-meta {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.04em;
+      color: var(--muted-on-cream);
+      opacity: .6;
+    }
+
+    .kit-rack-thumbs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .kit-rack-thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(89, 44, 27, 0.18);
+      background: rgba(89, 44, 27, 0.05);
+      flex: none;
+    }
+    .kit-rack-thumb.round { border-radius: 50%; }
+    .kit-rack-thumb.yellow { background: #ECBD6B; }
+    .kit-rack-thumb.cream { background: var(--cream-deep); }
+    .kit-rack-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .kit-rack-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(89, 44, 27, 0.25);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+      width: 100%;
+    }
+    .kit-rack-btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+    .kit-rack-btn svg { width: 11px; height: 11px; }
+
+    .kit-rack-btn.primary {
+      background: var(--orange);
+      color: var(--cream);
+      border-color: var(--orange);
+      font-weight: 600;
+      padding: 12px 16px;
+    }
+    .kit-rack-btn.primary:hover {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+      color: var(--cream);
+    }
+
+    /* --- Recognition list --- */
+    .kit-recognition .recog-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .kit-recognition .recog-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+      border-top: 1px dashed rgba(89, 44, 27, 0.22);
+      font-family: var(--serif-text);
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .kit-recognition .recog-list li:first-child {
+      border-top: 0;
+      padding-top: 2px;
+    }
+    .kit-recognition .recog-list li:last-child { padding-bottom: 0; }
+    .kit-recognition .recog-name {
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+    .kit-recognition .recog-src {
+      font-style: italic;
+      color: var(--muted-on-cream);
+      font-size: 13px;
+      text-align: right;
+      flex: none;
+      white-space: nowrap;
+    }
+    .kit-recognition .recog-src .yr {
+      display: inline-block;
+      margin-left: 6px;
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      vertical-align: 1px;
+    }
+
+    @media (max-width: 520px) {
+      .kit-assets-panel, .kit-recognition { padding: 22px 22px 24px; }
+      .kit-recognition .recog-list li { flex-direction: column; gap: 4px; }
+      .kit-recognition .recog-src { text-align: left; }
+    }
+
+    /* Toast — confirmation pop */
+    .kit-toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--espresso);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+      z-index: 200;
+      box-shadow: 0 14px 40px -10px rgba(0,0,0,.35);
+    }
+    .kit-toast.in {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ===== Smaller "what we get featured on" sections (kept brief) ===== */
+    .media-section { padding: 100px 0; }
+    .media-section .section-head {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      margin-bottom: 48px;
+      align-items: end;
+    }
+    @media (max-width: 920px) {
+      .media-section .section-head { grid-template-columns: 1fr; gap: 22px; }
+    }
+    .media-section .section-head h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.005em;
+      margin-top: 14px;
+    }
+    .media-section .section-head p {
+      font-size: 16px;
+      line-height: 1.65;
+      opacity: .92;
+    }
+
+    /* ===== Coverage section ===== */
+    .coverage-section { padding: 120px 0 140px; }
+    @media (max-width: 720px) { .coverage-section { padding: 88px 0 100px; } }
+
+    /* --- Stat row above the wall --- */
+    .coverage-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: 48px 0 8px;
+      background: var(--hairline-dark);
+      border: 1px solid var(--hairline-dark);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .coverage-stats .cs-cell {
+      padding: 22px 26px;
+      background: var(--espresso);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .coverage-stats .cs-num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.2vw, 52px);
+      line-height: 0.95;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+    }
+    .coverage-stats .cs-lbl {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tan);
+      font-weight: 600;
+    }
+    @media (max-width: 720px) {
+      .coverage-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* --- Press wall (logo strip / marquee of outlet names) --- */
+    .press-wall {
+      position: relative;
+      margin: 36px -32px 64px;
+      padding: 28px 0;
+      border-top: 1px solid var(--hairline-dark);
+      border-bottom: 1px solid var(--hairline-dark);
+    }
+    .press-wall-strip {
+      position: relative;
+      overflow: hidden;
+    }
+    .press-wall-eyebrow {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--espresso);
+      padding: 4px 14px;
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--tan);
+      font-weight: 600;
+      z-index: 3;
+      border-radius: 999px;
+      border: 1px solid var(--hairline-dark);
+      white-space: nowrap;
+    }
+    .press-wall-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 48px;
+      width: max-content;
+      animation: pressScroll 42s linear infinite;
+      will-change: transform;
+      padding-top: 6px;
+    }
+    .press-wall:hover .press-wall-track { animation-play-state: paused; }
+    @keyframes pressScroll {
+      from { transform: translate3d(0,0,0); }
+      to   { transform: translate3d(-50%, 0, 0); }
+    }
+    .pw-name {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.4vw, 32px);
+      letter-spacing: 0.005em;
+      color: var(--cream);
+      opacity: 0.55;
+      white-space: nowrap;
+      transition: opacity .25s ease, color .25s ease;
+      flex: 0 0 auto;
+    }
+    .pw-name:hover {
+      opacity: 1;
+      color: var(--tan);
+    }
+    .pw-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: 0.65;
+      flex: 0 0 auto;
+    }
+    .press-wall::before,
+    .press-wall::after {
+      content: "";
+      position: absolute;
+      top: 28px; bottom: 28px;
+      width: 120px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .press-wall::before { left: 0;  background: linear-gradient(90deg, var(--espresso), transparent); }
+    .press-wall::after  { right: 0; background: linear-gradient(270deg, var(--espresso), transparent); }
+
+    /* --- Filters --- */
+    .coverage-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .cov-filter {
+      appearance: none;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--hairline-dark);
+      background: rgba(247, 238, 228, 0.03);
+      color: var(--muted-on-dark);
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cov-filter:hover {
+      background: rgba(247, 238, 228, 0.07);
+      border-color: rgba(236, 189, 107, 0.35);
+      color: var(--cream);
+    }
+    .cov-filter .cov-filter-ct {
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(247, 238, 228, 0.08);
+      color: var(--muted-on-dark);
+      font-variant-numeric: tabular-nums;
+    }
+    .cov-filter.active {
+      background: var(--tan);
+      color: var(--espresso);
+      border-color: var(--tan);
+    }
+    .cov-filter.active .cov-filter-ct {
+      background: rgba(89, 44, 27, 0.18);
+      color: var(--espresso);
+    }
+
+    /* --- Scrollable coverage container --- */
+    .coverage-scroll {
+      position: relative;
+      max-height: 720px;
+      overflow-y: auto;
+      border: 1px solid var(--hairline-dark);
+      border-radius: 18px;
+      background: rgba(247, 238, 228, 0.018);
+      scroll-behavior: smooth;
+    }
+    .coverage-scroll::-webkit-scrollbar { width: 8px; }
+    .coverage-scroll::-webkit-scrollbar-track { background: transparent; }
+    .coverage-scroll::-webkit-scrollbar-thumb {
+      background: rgba(236, 189, 107, 0.35);
+      border-radius: 4px;
+      border: 2px solid var(--espresso);
+    }
+    .coverage-scroll::-webkit-scrollbar-thumb:hover { background: rgba(236, 189, 107, 0.55); }
+    .coverage-scroll {
+      scrollbar-color: rgba(236, 189, 107, 0.35) transparent;
+    }
+    /* Bottom fade in the scroller */
+    .coverage-scroll-wrap {
+      position: relative;
+    }
+    .coverage-scroll-wrap::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 8px;
+      bottom: 0;
+      height: 60px;
+      pointer-events: none;
+      border-radius: 0 0 18px 18px;
+      background: linear-gradient(180deg, transparent, var(--espresso));
+    }
+
+    /* Group inside the scroller */
+    .cov-group {
+      padding: 36px 28px 28px;
+      border-bottom: 1px solid var(--hairline-dark);
+      scroll-margin-top: 8px;
+    }
+    .cov-group:last-of-type { border-bottom: none; padding-bottom: 64px; }
+    .cov-group-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--hairline-dark);
+      flex-wrap: wrap;
+    }
+    .cov-group-head h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.1;
+      color: var(--cream);
+      margin: 0;
+      letter-spacing: -0.005em;
+    }
+    .cov-group-head .cov-group-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tan);
+      font-weight: 600;
+    }
+    .cov-group-head .cov-group-meta .ct {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 189, 107, 0.4);
+      color: var(--tan);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Card grid */
+    .cov-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 720px) {
+      .cov-grid { grid-template-columns: 1fr; }
+      .cov-group { padding: 28px 18px 22px; }
+      .coverage-scroll { max-height: 620px; }
+    }
+
+    .cov-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 22px;
+      border: 1px solid var(--hairline-dark);
+      border-radius: 12px;
+      background: rgba(247, 238, 228, 0.025);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: background .25s ease, border-color .25s ease, transform .25s ease;
+      min-height: 154px;
+    }
+    .cov-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 2px; height: 100%;
+      background: var(--tan);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .3s ease;
+    }
+    .cov-card:hover {
+      background: rgba(247, 238, 228, 0.055);
+      border-color: rgba(236, 189, 107, 0.3);
+      transform: translateY(-2px);
+    }
+    .cov-card:hover::before { transform: scaleY(1); }
+    .cov-card:focus-visible {
+      outline: 2px solid var(--tan);
+      outline-offset: 3px;
+    }
+
+    .cov-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .cov-card-pub {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tan);
+      line-height: 1.3;
+    }
+    .cov-card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(236, 189, 107, 0.1);
+      border: 1px solid rgba(236, 189, 107, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--tan);
+      flex: 0 0 auto;
+    }
+    .cov-card-icon svg { width: 13px; height: 13px; }
+
+    .cov-card-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.28;
+      letter-spacing: -0.005em;
+      color: var(--cream);
+      text-wrap: pretty;
+      flex: 1;
+    }
+    .cov-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--hairline-dark);
+    }
+    .cov-card-date {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--muted-on-dark);
+      opacity: .7;
+      font-variant-numeric: tabular-nums;
+    }
+    .cov-card-date.empty { opacity: 0; }
+    .cov-card-arrow {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(236, 189, 107, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--tan);
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+      flex: 0 0 auto;
+    }
+    .cov-card-arrow svg { width: 11px; height: 11px; }
+    .cov-card:hover .cov-card-arrow {
+      background: var(--tan);
+      color: var(--espresso);
+      border-color: var(--tan);
+      transform: translate(2px, -2px);
+    }
+
+    /* Hidden cards (when filtered) */
+    .cov-group[hidden] { display: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .press-wall-track { animation: none; }
+    }
+
+    /* --- Collapsible preview + toggle --- */
+    .coverage-preview {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 720px) { .coverage-preview { grid-template-columns: 1fr; } }
+
+    .coverage-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 28px 0 4px;
+    }
+    .coverage-toggle {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 189, 107, 0.30);
+      background: rgba(247, 238, 228, 0.04);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .coverage-toggle:hover {
+      background: rgba(247, 238, 228, 0.08);
+      border-color: var(--tan);
+      transform: translateY(-1px);
+    }
+    .coverage-toggle .ct-label {
+      font-weight: 500;
+    }
+    .coverage-toggle .ct-count {
+      color: var(--tan);
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      padding-left: 12px;
+      border-left: 1px solid var(--hairline-dark);
+    }
+    .coverage-toggle .ct-icon {
+      width: 14px;
+      height: 14px;
+      color: var(--tan);
+      transition: transform .35s cubic-bezier(.2,.7,.2,1);
+    }
+    .coverage-toggle[aria-expanded="true"] .ct-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Full view container — collapse cleanly via hidden + height transition */
+    .coverage-full {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .5s cubic-bezier(.2,.7,.2,1), opacity .35s ease, margin-top .35s ease;
+      margin-top: 0;
+    }
+    .coverage-full.open {
+      max-height: 2400px;
+      opacity: 1;
+      margin-top: 28px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .coverage-full { transition: none; }
+    }
+
+    /* Empty-state placeholders (the page is fresh — no real coverage yet) */
+    .ph-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 920px) { .ph-grid { grid-template-columns: 1fr; } }
+    .ph-card {
+      border: 1px dashed var(--hairline-dark);
+      border-radius: 14px;
+      padding: 30px 28px;
+      background: rgba(247, 238, 228, 0.02);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .bg-cream .ph-card {
+      border-color: rgba(89, 44, 27, 0.18);
+      background: rgba(89, 44, 27, 0.02);
+    }
+    .ph-card .ph-tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tan);
+      font-weight: 600;
+    }
+    .bg-cream .ph-card .ph-tag { color: var(--orange); }
+    .ph-card .ph-body {
+      font-family: var(--serif-text);
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--muted-on-dark);
+      opacity: .8;
+      margin-top: 16px;
+    }
+    .bg-cream .ph-card .ph-body { color: var(--muted-on-cream); }
+    .ph-card .ph-foot {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--muted-on-dark);
+      opacity: .55;
+      margin-top: 16px;
+    }
+    .bg-cream .ph-card .ph-foot { color: var(--muted-on-cream); }
+
+    /* ===== Press contact (footer) ===== */
+    .press-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 56px;
+      border-radius: 18px;
+      background: var(--espresso);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .press-contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(60% 80% at 0% 0%, rgba(236, 189, 107, .14), transparent 60%),
+        radial-gradient(50% 70% at 100% 100%, rgba(160, 62, 37, .18), transparent 60%);
+    }
+    .press-contact > * { position: relative; z-index: 1; }
+    @media (max-width: 920px) {
+      .press-contact { grid-template-columns: 1fr; padding: 36px 28px; }
+    }
+    .press-contact h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(28px, 3.4vw, 40px);
+      line-height: 1.1;
+      margin: 10px 0 12px;
+    }
+    .press-contact p {
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--muted-on-dark);
+      max-width: 44ch;
+    }
+    .press-contact a.mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--tan);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+    .press-contact a.mail:hover { color: var(--cream); }
+
+    .press-contact .eyebrow { color: var(--tan); }
+    .press-contact .eyebrow::before { background: var(--tan); }
+
+    /* Mini footer */
+    .footer-mini {
+      padding: 44px 0;
+      border-top: 1px solid var(--hairline-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--muted-on-dark);
+    }
+    .footer-mini a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+    @media (max-width: 720px) {
+      .footer-mini { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== HERO =============== -->
+  <section class="media-hero no-texture" data-bg="cream" data-screen-label="01 Media Hero">
+
+    <!-- Animated background layers -->
+    <div class="media-hero-bg" aria-hidden="true">
+      <!-- Halftone dot field, slow drift -->
+      <div class="mh-halftone"></div>
+
+      <!-- Broadcast "radio waves" radiating from upper-right -->
+      <div class="mh-broadcast">
+        <div class="mh-wave mh-wave-1"></div>
+        <div class="mh-wave mh-wave-2"></div>
+        <div class="mh-wave mh-wave-3"></div>
+        <div class="mh-wave-anchor"></div>
+      </div>
+
+      <!-- Three drifting bauhaus shapes in brand colors -->
+      <div class="mh-shape mh-shape-1"></div>
+      <div class="mh-shape mh-shape-2"></div>
+      <div class="mh-shape mh-shape-3"></div>
+
+      <!-- Slow horizontal scan line sweep -->
+      <div class="mh-scan"></div>
+
+      <!-- Soft fade into the cream section below -->
+      <div class="mh-horizon"></div>
+    </div>
+
+    <!-- Decorative inset frame -->
+    <div class="media-hero-frame" aria-hidden="true"></div>
+
+    <div class="back-bar">
+      <a href="Daley Growth Consulting v2.html">
+        <span class="arr">←</span>
+        <span>Back to home</span>
+      </a>
+    </div>
+    <div class="media-brand-row">
+      <img src="assets/daley-logo-rust.png" alt="Daley Growth Consulting" />
+    </div>
+
+    <div class="wrap">
+      <span class="eyebrow">Featured In</span>
+      <h1>For interviews, features, and bookings.</h1>
+      <p class="lede">
+        Ann-Marie Berdar-Daley talks to founders, ops leaders, and reporters about what AI changes inside a business. The wins, the dead ends, and where AI actually moves the needle in a business setting. Below: a full press kit (headshot, logos, bios) and every place she's shown up so far.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============== PRESS KIT =============== -->
+  <section class="bg-cream kit-section" data-bg="cream" data-screen-label="02 Press Kit">
+    <div class="wrap">
+
+      <div class="kit-head">
+        <div>
+          <span class="eyebrow">Press Kit</span>
+          <h2>Everything you need to feature us.</h2>
+        </div>
+        <div>
+          <p class="kit-intro">
+            Grab assets individually below, or download the complete kit as a single zip. Bios come in long, short, and one-liner cuts — copy directly to your draft. Logos come in two variants: yellow on cream, and cream on yellow.
+          </p>
+          <button class="kit-download-all" id="download-all">
+            <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="download-all-label">Download complete press kit (.zip)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual asset cards -->
+      <div class="kit-assets">
+
+        <article class="kit-asset headshot">
+          <div class="kit-asset-preview">
+            <img src="assets/ann-marie-headshot.png" alt="Ann-Marie Berdar-Daley, founder of Daley Growth Consulting" />
+          </div>
+          <div class="kit-asset-meta">
+            <div>
+              <span class="lbl">Headshot</span>
+              <span class="sub">PNG · 941 × 1672</span>
+            </div>
+            <a class="dl" href="assets/ann-marie-headshot.png" download="ann-marie-berdar-daley-headshot.png">
+              <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        </article>
+
+        <article class="kit-asset logo-yellow">
+          <div class="kit-asset-preview">
+            <img src="assets/dgc-logo-yellow-bg.png" alt="Daley Growth Consulting logo, cream on yellow" />
+          </div>
+          <div class="kit-asset-meta">
+            <div>
+              <span class="lbl">Logo · Cream on yellow</span>
+              <span class="sub">PNG · Square</span>
+            </div>
+            <a class="dl" href="assets/dgc-logo-yellow-bg.png" download="daley-growth-consulting-logo-cream-on-yellow.png">
+              <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        </article>
+
+        <article class="kit-asset logo-cream">
+          <div class="kit-asset-preview">
+            <img src="assets/dgc-logo-cream-bg.png" alt="Daley Growth Consulting logo, yellow on cream" />
+          </div>
+          <div class="kit-asset-meta">
+            <div>
+              <span class="lbl">Logo · Yellow on cream</span>
+              <span class="sub">PNG · Square</span>
+            </div>
+            <a class="dl" href="assets/dgc-logo-cream-bg.png" download="daley-growth-consulting-logo-yellow-on-cream.png">
+              <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bios + one-liner -->
+      <div class="kit-copy">
+
+        <div class="kit-copy-card oneliner tall">
+          <div class="kit-copy-head">
+            <div class="lbl-row">
+              <span class="kind">One-liner</span>
+              <span class="meta">About Daley Growth Consulting · 24 words</span>
+            </div>
+            <button class="copy-btn" data-copy="oneliner">
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <rect x="3" y="1" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M1.5 3v7.5a1 1 0 0 0 1 1H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span class="copy-label">Copy</span>
+            </button>
+          </div>
+          <div class="body" data-text="oneliner">
+            <p>Daley Growth Consulting builds Digital Employees and AI infrastructure for executives and operations teams. Architected by a founder who has built and scaled businesses.</p>
+          </div>
+        </div>
+
+        <div class="kit-copy-col">
+
+        <div class="kit-copy-card">
+          <div class="kit-copy-head">
+            <div class="lbl-row">
+              <span class="kind">Short bio</span>
+              <span class="meta">~95 words</span>
+            </div>
+            <button class="copy-btn" data-copy="short-bio">
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <rect x="3" y="1" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M1.5 3v7.5a1 1 0 0 0 1 1H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span class="copy-label">Copy</span>
+            </button>
+          </div>
+          <div class="body" data-text="short-bio">
+            <p>Ann-Marie Berdar-Daley is the founder of Daley Growth Consulting, an AI consultancy that builds Digital Employees and AI infrastructure for executives and operations teams. She spent a decade in franchising scaling a brick-and-mortar business across multiple states: building every system it ran on, growing the teams that ran them, and overseeing multi-million-dollar P&amp;Ls. She brings the same architect's brain to AI: agents, internal apps, and operational infrastructure for small to medium sized companies. Ruthless about ROI, allergic to hype, fluent in the trade-offs leaders actually make to help other businesses grow by unlocking what AI can actually do for a business.</p>
+          </div>
+        </div>
+
+        <!-- Compact asset rack: thumbnails + downloads for journalists in a hurry. -->
+        <div class="kit-assets-panel" aria-labelledby="kit-assets-heading">
+          <h3 class="kit-mini-label" id="kit-assets-heading">Press kit assets.</h3>
+          <div class="kit-rack">
+
+            <div class="kit-rack-row">
+              <div class="kit-rack-head">
+                <span class="kit-rack-lbl">Headshot</span>
+                <span class="kit-rack-meta">PNG · 300dpi</span>
+              </div>
+              <div class="kit-rack-thumbs">
+                <div class="kit-rack-thumb round">
+                  <img src="assets/ann-marie-headshot.png" alt="Ann-Marie Berdar-Daley headshot thumbnail" />
+                </div>
+              </div>
+              <a class="kit-rack-btn" href="assets/ann-marie-headshot.png" download="ann-marie-berdar-daley-headshot.jpg">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download headshot (.jpg)
+              </a>
+            </div>
+
+            <div class="kit-rack-row">
+              <div class="kit-rack-head">
+                <span class="kit-rack-lbl">Logos</span>
+                <span class="kit-rack-meta">2 variants · PNG</span>
+              </div>
+              <div class="kit-rack-thumbs">
+                <div class="kit-rack-thumb yellow">
+                  <img src="assets/dgc-logo-yellow-bg.png" alt="Daley Growth Consulting logo, cream on yellow" />
+                </div>
+                <div class="kit-rack-thumb cream">
+                  <img src="assets/dgc-logo-cream-bg.png" alt="Daley Growth Consulting logo, yellow on cream" />
+                </div>
+              </div>
+              <button class="kit-rack-btn" id="download-logos" type="button">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span id="download-logos-label">Download logos (.zip)</span>
+              </button>
+            </div>
+
+            <div class="kit-rack-row">
+              <button class="kit-rack-btn primary" type="button" id="download-all-mirror">
+                <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 1.5v8M3.5 6.5L7 10l3.5-3.5M2 12.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download full press kit (.zip)
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Recognition: a quiet list of receipts. -->
+        <div class="kit-recognition" aria-labelledby="kit-recognition-heading">
+          <h3 class="kit-mini-label" id="kit-recognition-heading">Recognition.</h3>
+          <ul class="recog-list">
+            <li>
+              <span class="recog-name">Capital Region Power 50</span>
+              <span class="recog-src">Albany Business Review<span class="yr">2025</span></span>
+            </li>
+            <li>
+              <span class="recog-name">40 Under 40</span>
+              <span class="recog-src">Albany Business Review</span>
+            </li>
+            <li>
+              <span class="recog-name">Women Who Mean Business</span>
+              <span class="recog-src">Albany Business Review</span>
+            </li>
+            <li>
+              <span class="recog-name">Entrepreneur of the Year</span>
+              <span class="recog-src">New York State</span>
+            </li>
+            <li>
+              <span class="recog-name">Young Philanthropist</span>
+              <span class="recog-src">Capital Region</span>
+            </li>
+          </ul>
+        </div>
+
+        </div><!-- /.kit-copy-col -->
+
+        <div class="kit-copy-col">
+
+        <div class="kit-copy-card">
+          <div class="kit-copy-head">
+            <div class="lbl-row">
+              <span class="kind">Long bio</span>
+              <span class="meta">~315 words</span>
+            </div>
+            <button class="copy-btn" data-copy="long-bio">
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <rect x="3" y="1" width="8" height="9" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M1.5 3v7.5a1 1 0 0 0 1 1H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span class="copy-label">Copy</span>
+            </button>
+          </div>
+          <div class="body" data-text="long-bio">
+            <p>Ann-Marie Berdar-Daley is the founder of Daley Growth Consulting, an AI consultancy that builds Digital Employees and AI infrastructure for executives and operations teams at founder-led businesses.</p>
+            <p>For a decade, she scaled and franchised a brick-and-mortar business across multiple states. Multi-unit, multi-state, multiple franchisees, brand integrity intact, unit economics that worked. She was the architect of the entire machine: development, lease negotiations, site selection, supply chain end to end, CPG production, marketing oversight, franchisee relations. She built every system the business ran on, hired and grew the teams that ran them, oversaw multi-million-dollar P&amp;Ls, and made the capital allocation calls that decided where growth came from. She did not run a department. She built the company.</p>
+            <p>Her brain was trained for this. Undergrad in molecular biology. MS in nutrition science. CFE credits from the International Franchise Association. Building a franchise system from scratch is one of the hardest jobs in business: every department has to scale, every workflow has to translate to a stranger running it a thousand miles away, every dollar has to earn its place. She got fluent in systems because the work demanded it.</p>
+            <p>When AI started getting genuinely useful in 2023, she had the substrate to move fast. She deployed AI infrastructure inside her own business and watched the bandwidth equation change. Then she got obsessed with the tech itself, started building agents and internal apps for founder friends, and realized no one else was doing it the way she was: founder-grade business judgment plus hands-on AI building, in one person.</p>
+            <p>That became Daley Growth Consulting. She builds Digital Employees and operational AI infrastructure for founder-led companies, then stays in for the long haul as their tech stack evolves. Ruthless about ROI, allergic to hype, fluent in the trade-offs you make when you are running a company.</p>
+            <p>Not as an engineer. As a founder who built the machine the first time and is building the next version of it now.</p>
+          </div>
+        </div>
+
+        </div><!-- /.kit-copy-col -->
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== PRESS MENTIONS =============== -->
+  <section class="bg-dark media-section coverage-section" data-bg="dark" data-screen-label="03 Coverage">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">As Seen In</span>
+          <h2>Coverage &amp; mentions.</h2>
+        </div>
+        <p>
+          Before founding Daley Growth Consulting, Ann-Marie Berdar-Daley (then Ann-Marie Berdar) spent a decade building and franchising BARE Blends, a brick-and-mortar healthy food brand she scaled across multiple states. The full press archive below: regional press, business journals, podcasts, and TV.
+        </p>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="coverage-stats">
+        <div class="cs-cell">
+          <span class="cs-num" data-counter="32">32</span>
+          <span class="cs-lbl">Features &amp; mentions</span>
+        </div>
+        <div class="cs-cell">
+          <span class="cs-num" data-counter="14">14</span>
+          <span class="cs-lbl">Publications</span>
+        </div>
+        <div class="cs-cell">
+          <span class="cs-num" data-counter="4">4</span>
+          <span class="cs-lbl">Podcast appearances</span>
+        </div>
+        <div class="cs-cell">
+          <span class="cs-num" data-counter="9">9</span>
+          <span class="cs-lbl">TV segments</span>
+        </div>
+      </div>
+
+      <!-- Marquee outlet wall -->
+      <div class="press-wall" role="img" aria-label="Featured publications: Albany Business Review, Saratoga Living, SRQ Magazine, NEWS10, WNYT, CBS6, Daily Gazette.">
+        <span class="press-wall-eyebrow">Featured in</span>
+        <div class="press-wall-strip">
+        <div class="press-wall-track">
+          <!-- Run 1 -->
+          <span class="pw-name">Albany Business Review</span><span class="pw-dot"></span>
+          <span class="pw-name">Saratoga Living</span><span class="pw-dot"></span>
+          <span class="pw-name">SRQ Magazine</span><span class="pw-dot"></span>
+          <span class="pw-name">NEWS10 ABC</span><span class="pw-dot"></span>
+          <span class="pw-name">WNYT NewsChannel 13</span><span class="pw-dot"></span>
+          <span class="pw-name">CBS6 Albany</span><span class="pw-dot"></span>
+          <span class="pw-name">Daily Gazette</span><span class="pw-dot"></span>
+          <span class="pw-name">Saratoga Business Journal</span><span class="pw-dot"></span>
+          <span class="pw-name">Bold Journey</span><span class="pw-dot"></span>
+          <span class="pw-name">VoyageDenver</span><span class="pw-dot"></span>
+          <!-- Run 2 (duplicate for seamless loop) -->
+          <span class="pw-name">Albany Business Review</span><span class="pw-dot"></span>
+          <span class="pw-name">Saratoga Living</span><span class="pw-dot"></span>
+          <span class="pw-name">SRQ Magazine</span><span class="pw-dot"></span>
+          <span class="pw-name">NEWS10 ABC</span><span class="pw-dot"></span>
+          <span class="pw-name">WNYT NewsChannel 13</span><span class="pw-dot"></span>
+          <span class="pw-name">CBS6 Albany</span><span class="pw-dot"></span>
+          <span class="pw-name">Daily Gazette</span><span class="pw-dot"></span>
+          <span class="pw-name">Saratoga Business Journal</span><span class="pw-dot"></span>
+          <span class="pw-name">Bold Journey</span><span class="pw-dot"></span>
+          <span class="pw-name">VoyageDenver</span><span class="pw-dot"></span>
+        </div>
+        </div>
+      </div>
+
+      <!-- Preview: top 4 cards shown when collapsed -->
+      <div class="coverage-preview" id="coverage-preview" aria-label="Featured coverage"></div>
+
+      <!-- Toggle button -->
+      <div class="coverage-toggle-wrap">
+        <button class="coverage-toggle" id="coverage-toggle" type="button" aria-expanded="false" aria-controls="coverage-full">
+          <span class="ct-label">Read more</span>
+          <span class="ct-count" id="coverage-toggle-count">28 more</span>
+          <svg class="ct-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Full grouped + filterable view (hidden by default) -->
+      <div class="coverage-full" id="coverage-full">
+
+        <!-- Filter chips -->
+        <div class="coverage-filters" role="tablist" aria-label="Filter coverage by category">
+          <button class="cov-filter active" type="button" data-target="all">All <span class="cov-filter-ct">32</span></button>
+          <button class="cov-filter" type="button" data-target="abr">Albany Business Review <span class="cov-filter-ct">5</span></button>
+          <button class="cov-filter" type="button" data-target="profiles">Interviews &amp; Profiles <span class="cov-filter-ct">5</span></button>
+          <button class="cov-filter" type="button" data-target="news">Local &amp; Regional News <span class="cov-filter-ct">9</span></button>
+          <button class="cov-filter" type="button" data-target="podcasts">Podcasts <span class="cov-filter-ct">4</span></button>
+          <button class="cov-filter" type="button" data-target="tv">TV / Video <span class="cov-filter-ct">9</span></button>
+        </div>
+
+        <!-- Scrollable coverage list -->
+        <div class="coverage-scroll-wrap">
+          <div class="coverage-scroll" id="coverage-scroll">
+            <!-- Sections rendered by JS so adding URLs later is one-line edits -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Icon symbols for coverage cards -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ic-trophy" viewBox="0 0 14 14">
+        <path d="M3 2h8v3a4 4 0 1 1-8 0V2z M1.5 3.5h1.5v1.8a1.8 1.8 0 1 1-1.5 0V3.5z M11 3.5h1.5v1.8a1.8 1.8 0 1 1-1.5 0V3.5z M5.5 9h3v2.5h-3z M4 12.5h6" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="ic-quote" viewBox="0 0 14 14">
+        <path d="M3 4.5c0-1 0.8-1.8 1.8-1.8h0.4v1.6h-0.4c-0.1 0-0.2 0.1-0.2 0.2v0.6h1v3.4h-2.6v-4z M7.4 4.5c0-1 0.8-1.8 1.8-1.8h0.4v1.6h-0.4c-0.1 0-0.2 0.1-0.2 0.2v0.6h1v3.4h-2.6v-4z" fill="currentColor"/>
+      </symbol>
+      <symbol id="ic-news" viewBox="0 0 14 14">
+        <rect x="1.5" y="2.5" width="9" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M10.5 5h2v5.5a1 1 0 0 1-1 1h-1" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M3.5 5h5 M3.5 7h5 M3.5 9h3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ic-mic" viewBox="0 0 14 14">
+        <rect x="5.25" y="1.75" width="3.5" height="6.5" rx="1.75" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M3 6.5a4 4 0 0 0 8 0 M7 10.5v2 M5 12.5h4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="ic-play" viewBox="0 0 14 14">
+        <rect x="1.5" y="2.5" width="11" height="8" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M6 5l3 2-3 2z" fill="currentColor"/>
+      </symbol>
+      <symbol id="ic-arrow" viewBox="0 0 11 11">
+        <path d="M2 9 L9 2 M4 2h5v5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Coverage data + renderer -->
+  <script>
+    (function () {
+      // Press list. Drop real URLs into `url` when available.
+      const PRESS = [
+        // ===== Albany Business Review =====
+        { cat: 'abr', pub: 'Albany Business Review',           title: 'BARE Blends C.E.O. Named "Woman Who Means Business"',                       date: '',           url: '#' },
+        { cat: 'abr', pub: 'Albany Business Review',           title: 'Bare Blends adds 7th local shop, plans expansion in two more states',     date: '',           url: '#' },
+        { cat: 'abr', pub: 'Albany Business Review · LinkedIn',title: 'LinkedIn share of the 7th-shop article',                                  date: '',           url: '#' },
+        { cat: 'abr', pub: 'Albany Business Review',           title: 'Capital Region Power 50 2025 — Annie Berdar & Jess Fuller named as a Duo',date: '2025',       url: '#' },
+        { cat: 'abr', pub: 'Standard Brokerage Company',       title: "Announcing the Albany Business Review's Power 50 for 2025",               date: '2025',       url: '#' },
+
+        // ===== Long-form interviews & profiles =====
+        { cat: 'profiles', pub: 'VoyageDenver',                          title: 'Community Highlights: Meet Ann-Marie Berdar of Bare Blends', date: '',            url: '#' },
+        { cat: 'profiles', pub: 'Bold Journey',                          title: 'Meet Ann-Marie Berdar',                                      date: '',            url: '#' },
+        { cat: 'profiles', pub: 'Michella Hand',                         title: 'Ann-Marie Berdar',                                           date: 'Jan 19, 2022',url: '#' },
+        { cat: 'profiles', pub: 'United Way of the Greater Capital Region', title: 'Ann-Marie Berdar',                                        date: '',            url: '#' },
+        { cat: 'profiles', pub: 'Capital Region Chamber',                title: 'Entrepreneur of the Year Awardee',                           date: '2022',        url: '#' },
+
+        // ===== Local & regional news =====
+        { cat: 'news', pub: 'Daily Gazette',             title: 'BARE Blends in Stuyvesant Plaza relocating in plaza',                          date: 'Oct 2024',    url: '#' },
+        { cat: 'news', pub: 'Altamont Enterprise',       title: 'Bare Blends is on the move',                                                   date: 'Oct 3, 2024', url: '#' },
+        { cat: 'news', pub: 'Saratoga Living',           title: 'BARE Blends Opens Location on Congress Street in Saratoga Springs',            date: '',            url: '#' },
+        { cat: 'news', pub: 'Saratoga Living',           title: 'Smoothie Franchise BARE Blends Opens Clifton Park Location',                   date: '',            url: '#' },
+        { cat: 'news', pub: '518 Bites & Sights',        title: 'BARE Blends Opens Saratoga Location',                                          date: 'Jan 9, 2022', url: '#' },
+        { cat: 'news', pub: 'Saratoga Business Journal', title: 'BARE Blends Offers Healthy Foods, Juices On Congress Street In Downtown Saratoga', date: 'Feb 2022',url: '#' },
+        { cat: 'news', pub: 'Saratoga Business Report',  title: 'BARE Blends: Healthy On-The-Go Coming to Downtown',                            date: '',            url: '#' },
+        { cat: 'news', pub: 'SRQ Magazine',              title: 'BARE Blends Brings Plant-Based Power to Sarasota',                             date: 'Jul 22, 2025',url: '#' },
+        { cat: 'news', pub: 'Ed Lewi and Associates',    title: 'BARE Blends to relocate within Stuyvesant Plaza',                              date: '',            url: '#' },
+
+        // ===== Podcasts =====
+        { cat: 'podcasts', pub: 'NEWS10 — On the Story with Trishna Begam', title: 'Bare Blends',                                              date: '',            url: '#' },
+        { cat: 'podcasts', pub: 'Choose A Happy Day Podcast',               title: 'Annie Berdar: From Passion to Franchise',                  date: 'Feb 28, 2025',url: '#' },
+        { cat: 'podcasts', pub: 'The V Spot Vegan Podcast',                 title: 'Psyched on the Dunks! with Annie Berdar — Episode 142',    date: '',            url: '#' },
+        { cat: 'podcasts', pub: 'Emerging Franchise Brands',                title: 'The Bare Blends Story of Health and Franchise Growth — S2E30', date: '',         url: '#' },
+
+        // ===== TV / Video =====
+        { cat: 'tv', pub: 'NEWS10 ABC Restaurant Rundown', title: 'Bare Blends relocates within Stuyvesant Plaza',           date: '',            url: '#' },
+        { cat: 'tv', pub: 'NEWS10 ABC',                    title: 'Neighboring Latham businesses speak about burglary',      date: 'Dec 2025',    url: '#' },
+        { cat: 'tv', pub: 'WNYT NewsChannel 13',           title: 'BARE Blends opens new Glenmont location',                 date: '',            url: '#' },
+        { cat: 'tv', pub: 'WNYT NewsChannel 13',           title: 'Bare Blends celebrates new location at Stuyvesant Plaza', date: '',            url: '#' },
+        { cat: 'tv', pub: "WNYT Today's Women",            title: 'Bare Blends co-owners focus on health and wellness',      date: '',            url: '#' },
+        { cat: 'tv', pub: 'CBS6 Albany',                   title: 'Bare Blends owners focus on health, wellness',            date: 'May 24, 2024',url: '#' },
+        { cat: 'tv', pub: 'CBS6',                          title: '#GivingOn10: Bare Blends fundraising for arboretum',      date: 'Feb 8, 2024', url: '#' },
+        { cat: 'tv', pub: 'CBS6',                          title: 'Bare Blends fundraising for Arboretum',                   date: 'Feb 6, 2024', url: '#' },
+        { cat: 'tv', pub: 'CBS6',                          title: 'Bare Blends Introduces 9 New Items For Their Fall Menu!', date: 'Sep 12, 2024',url: '#' },
+      ];
+
+      const CATEGORIES = [
+        { id: 'abr',      label: 'Albany Business Review',  sub: 'Awards & Articles', icon: 'ic-trophy' },
+        { id: 'profiles', label: 'Interviews & Profiles',   sub: 'Long-form features', icon: 'ic-quote'  },
+        { id: 'news',     label: 'Local & Regional News',   sub: 'Print + online',     icon: 'ic-news'   },
+        { id: 'podcasts', label: 'Podcasts',                sub: 'Audio appearances',  icon: 'ic-mic'    },
+        { id: 'tv',       label: 'TV / Video',              sub: 'Broadcast & segments', icon: 'ic-play' },
+      ];
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      }
+
+      function renderCard(item, icon) {
+        const isExt = item.url && item.url !== '#';
+        return `
+          <a class="cov-card" href="${esc(item.url)}"${isExt ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+            <div class="cov-card-top">
+              <span class="cov-card-pub">${esc(item.pub)}</span>
+              <span class="cov-card-icon" aria-hidden="true"><svg><use href="#${icon}"/></svg></span>
+            </div>
+            <h4 class="cov-card-title">${esc(item.title)}</h4>
+            <div class="cov-card-foot">
+              <span class="cov-card-date${item.date ? '' : ' empty'}">${esc(item.date || '—')}</span>
+              <span class="cov-card-arrow" aria-hidden="true"><svg><use href="#ic-arrow"/></svg></span>
+            </div>
+          </a>`;
+      }
+
+      function renderGroup(cat) {
+        const items = PRESS.filter(p => p.cat === cat.id);
+        return `
+          <section class="cov-group" data-cat="${cat.id}" id="cov-${cat.id}">
+            <header class="cov-group-head">
+              <h3>${esc(cat.label)}</h3>
+              <span class="cov-group-meta">
+                <span>${esc(cat.sub)}</span>
+                <span class="ct">${items.length}</span>
+              </span>
+            </header>
+            <div class="cov-grid">${items.map(it => renderCard(it, cat.icon)).join('')}</div>
+          </section>`;
+      }
+
+      const scroller = document.getElementById('coverage-scroll');
+      if (!scroller) return;
+      scroller.innerHTML = CATEGORIES.map(renderGroup).join('');
+
+      // Render preview cards (top 4 across the press list)
+      const catIcon = Object.fromEntries(CATEGORIES.map(c => [c.id, c.icon]));
+      const preview = document.getElementById('coverage-preview');
+      if (preview) {
+        const previewItems = PRESS.slice(0, 4);
+        preview.innerHTML = previewItems.map(it => renderCard(it, catIcon[it.cat])).join('');
+      }
+
+      // Read more / Show less toggle
+      const toggle = document.getElementById('coverage-toggle');
+      const fullPane = document.getElementById('coverage-full');
+      const toggleCount = document.getElementById('coverage-toggle-count');
+      const remaining = Math.max(0, PRESS.length - 4);
+      if (toggleCount) toggleCount.textContent = remaining + ' more';
+      if (toggle && fullPane) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          if (expanded) {
+            // collapse
+            toggle.setAttribute('aria-expanded', 'false');
+            fullPane.classList.remove('open');
+            toggle.querySelector('.ct-label').textContent = 'Read more';
+            if (toggleCount) toggleCount.textContent = remaining + ' more';
+            if (preview) preview.style.display = '';
+          } else {
+            // expand
+            toggle.setAttribute('aria-expanded', 'true');
+            fullPane.classList.add('open');
+            toggle.querySelector('.ct-label').textContent = 'Show less';
+            if (toggleCount) toggleCount.textContent = 'collapse';
+            if (preview) preview.style.display = 'none';
+          }
+        });
+      }
+
+      // Filter behavior — also scrolls the chosen group into view inside the scroller.
+      const filters = document.querySelectorAll('.cov-filter');
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+          filters.forEach(b => b.classList.toggle('active', b === btn));
+
+          const groups = scroller.querySelectorAll('.cov-group');
+          if (target === 'all') {
+            groups.forEach(g => g.hidden = false);
+            scroller.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            groups.forEach(g => g.hidden = (g.getAttribute('data-cat') !== target));
+            scroller.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- =============== PRESS CONTACT =============== -->
+  <section class="bg-cream" style="padding: 100px 0 120px;" data-bg="cream" data-screen-label="04 Press Contact">
+    <div class="wrap">
+      <div class="press-contact">
+        <div>
+          <span class="eyebrow">Press Contact</span>
+          <h3>For interviews and bookings.</h3>
+          <p>For podcast appearances, panels, keynotes, written features, or quote requests, reach out with a quick line about your show, publication, or event.</p>
+          <a class="mail" href="mailto:hello@daleygc.com?subject=Press%20inquiry">
+            hello@daleygc.com
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div>
+          <span class="eyebrow">Topics</span>
+          <h3>What to ask about.</h3>
+          <p>
+            Practical AI for founders and ops leaders · Building Digital Employees inside an existing team · Scaling a franchise system · The shift from running a business to architecting one · Choosing the right tools (and the ones to ignore) · AI literacy for non-technical leadership teams · The hybrid human-and-AI workforce.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== MINI FOOTER =============== -->
+  <section class="bg-darkest" data-bg="dark" style="padding: 0;">
+    <div class="wrap">
+      <div class="footer-mini">
+        <div>© 2025 Daley Growth Consulting</div>
+        <div><a href="Daley Growth Consulting v2.html">Back to home →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast for copy/download confirmations -->
+  <div class="kit-toast" id="kit-toast" role="status" aria-live="polite"></div>
+
+  <!-- JSZip for "Download complete press kit" -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    /* ===== Copy-to-clipboard for bios + one-liner ===== */
+    (function () {
+      const toast = document.getElementById('kit-toast');
+      let toastTimer = null;
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add('in');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('in'), 1800);
+      }
+
+      function getPlainText(node) {
+        // Collapse paragraphs into newlines.
+        return Array.from(node.querySelectorAll('p'))
+          .map(p => p.textContent.trim())
+          .filter(Boolean)
+          .join('\n\n');
+      }
+
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const key = btn.getAttribute('data-copy');
+          const src = document.querySelector('[data-text="' + key + '"]');
+          if (!src) return;
+          const text = getPlainText(src);
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.classList.add('copied');
+            btn.querySelector('.copy-label').textContent = 'Copied';
+            showToast('Copied to clipboard');
+            setTimeout(() => {
+              btn.classList.remove('copied');
+              btn.querySelector('.copy-label').textContent = 'Copy';
+            }, 1800);
+          } catch (e) {
+            // Fallback: select + execCommand
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); showToast('Copied to clipboard'); }
+            catch (e2) { showToast('Press ⌘C to copy'); }
+            document.body.removeChild(ta);
+          }
+        });
+      });
+
+      /* ===== Build & download the complete press kit zip ===== */
+      const allBtn = document.getElementById('download-all');
+      const allLbl = document.getElementById('download-all-label');
+
+      function buildBiosText() {
+        const oneliner = getPlainText(document.querySelector('[data-text="oneliner"]'));
+        const shortBio = getPlainText(document.querySelector('[data-text="short-bio"]'));
+        const longBio  = getPlainText(document.querySelector('[data-text="long-bio"]'));
+
+        return [
+          'DALEY GROWTH CONSULTING — PRESS KIT',
+          '====================================',
+          '',
+          'ONE-LINER (about Daley Growth Consulting)',
+          '-----------------------------------------',
+          oneliner,
+          '',
+          '',
+          'SHORT BIO — Ann-Marie Berdar-Daley (~75 words)',
+          '----------------------------------------------',
+          shortBio,
+          '',
+          '',
+          'LONG BIO — Ann-Marie Berdar-Daley (~210 words)',
+          '----------------------------------------------',
+          longBio,
+          '',
+          '',
+          'PRESS CONTACT',
+          '-------------',
+          'hello@daleygc.com',
+          'https://daleygc.com',
+          ''
+        ].join('\n');
+      }
+
+      async function fetchAsBlob(url) {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Failed to fetch ' + url);
+        return await res.blob();
+      }
+
+      allBtn.addEventListener('click', async () => {
+        if (typeof JSZip === 'undefined') {
+          showToast('Zip library failed to load');
+          return;
+        }
+        const original = allLbl.textContent;
+        allBtn.disabled = true;
+        allLbl.textContent = 'Building zip…';
+
+        try {
+          const zip = new JSZip();
+          const root = zip.folder('Daley-Growth-Consulting-Press-Kit');
+
+          // Bios
+          root.file('bios-and-one-liner.txt', buildBiosText());
+
+          // Logos
+          const logos = root.folder('logos');
+          const yellowBlob = await fetchAsBlob('assets/dgc-logo-yellow-bg.png');
+          logos.file('daley-growth-consulting-logo-cream-on-yellow.png', yellowBlob);
+          const creamBlob = await fetchAsBlob('assets/dgc-logo-cream-bg.png');
+          logos.file('daley-growth-consulting-logo-yellow-on-cream.png', creamBlob);
+
+          // Headshot
+          const headshots = root.folder('headshot');
+          const headshotBlob = await fetchAsBlob('assets/ann-marie-headshot.png');
+          headshots.file('ann-marie-berdar-daley-headshot.png', headshotBlob);
+
+          // README
+          root.file('README.txt', [
+            'Daley Growth Consulting — Press Kit',
+            '',
+            'Contents:',
+            '  /bios-and-one-liner.txt    — one-liner, short bio, long bio',
+            '  /headshot/                  — official founder headshot (PNG)',
+            '  /logos/                     — primary logo in two color variants',
+            '',
+            'Press contact: hello@daleygc.com',
+            'Website: https://daleygc.com',
+            ''
+          ].join('\n'));
+
+          const blob = await zip.generateAsync({ type: 'blob' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'Daley-Growth-Consulting-Press-Kit.zip';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          showToast('Press kit downloaded');
+        } catch (err) {
+          console.error(err);
+          showToast('Download failed — try again');
+        } finally {
+          allBtn.disabled = false;
+          allLbl.textContent = original;
+        }
+      });
+
+      /* ===== Mirror "Download full kit" button in the side rack ===== */
+      const mirrorBtn = document.getElementById('download-all-mirror');
+      if (mirrorBtn) {
+        mirrorBtn.addEventListener('click', () => allBtn.click());
+      }
+
+      /* ===== Logos-only zip ===== */
+      const logosBtn = document.getElementById('download-logos');
+      const logosLbl = document.getElementById('download-logos-label');
+      if (logosBtn) {
+        logosBtn.addEventListener('click', async () => {
+          if (typeof JSZip === 'undefined') {
+            showToast('Zip library failed to load');
+            return;
+          }
+          const original = logosLbl.textContent;
+          logosBtn.disabled = true;
+          logosLbl.textContent = 'Building zip…';
+          try {
+            const zip = new JSZip();
+            const folder = zip.folder('Daley-Growth-Consulting-Logos');
+            const yellowBlob = await fetchAsBlob('assets/dgc-logo-yellow-bg.png');
+            folder.file('daley-growth-consulting-logo-cream-on-yellow.png', yellowBlob);
+            const creamBlob = await fetchAsBlob('assets/dgc-logo-cream-bg.png');
+            folder.file('daley-growth-consulting-logo-yellow-on-cream.png', creamBlob);
+            const blob = await zip.generateAsync({ type: 'blob' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Daley-Growth-Consulting-Logos.zip';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            showToast('Logos downloaded');
+          } catch (err) {
+            console.error(err);
+            showToast('Download failed — try again');
+          } finally {
+            logosBtn.disabled = false;
+            logosLbl.textContent = original;
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
