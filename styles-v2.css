@@ -2801,11 +2801,14 @@ footer.site-footer {
   border-top: 1px solid rgba(212, 165, 116, 0.15) !important;
 }
 
-/* Mobile: more vertical space between H1 lines so the shadow halo
-   doesn't make adjacent words look smushed together. */
+/* Mobile: disable text-wrap balance so the forced <br/> in the H1
+   actually breaks the line. Add line-height and word-spacing for
+   readability now that words sit on their proper lines. */
 @media (max-width: 720px) {
   .hero.hero-yellow .hero-primary {
+    text-wrap: auto !important;
     line-height: 1.25 !important;
     letter-spacing: -0.015em !important;
+    word-spacing: 0.05em !important;
   }
 }
