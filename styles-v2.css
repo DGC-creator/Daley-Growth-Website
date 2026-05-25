@@ -3474,3 +3474,116 @@ footer.site-footer {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   HERO POLISH — append this ENTIRE file at the very BOTTOM of styles-v2.css
+   (after the new hero CSS block you pasted earlier).
+ 
+   Added 2026-05-25 to address three issues:
+     1. The shrunken title was too small — bumped up so it still has presence.
+     2. Negative space between nav and title was too generous — tightened.
+     3. Nav links didn't contrast against the yellow hero — forced espresso
+        and added uppercase tracking + hover underline for an editorial feel.
+   ========================================================================== */
+ 
+ 
+/* ---------- 1+2. Bigger title in stage phase + tighter spacing ---------- */
+ 
+.hero.hero-yellow.phase-stage .hero-primary {
+  /* was clamp(26px, 4vw, 52px) — now ~50% bigger so it dominates the frame */
+  font-size: clamp(42px, 6vw, 80px) !important;
+  letter-spacing: -0.02em !important;
+  -webkit-text-stroke-width: 1.8px !important;
+  text-shadow: 0 3px 0 rgba(89, 44, 27, 0.18) !important;
+}
+ 
+/* Pull the title closer to the nav, and tighten the gap below it. */
+.hero.phase-stage .hero-title-block {
+  padding-top: 56px !important;
+  padding-bottom: 12px !important;
+}
+.hero.phase-stage .hero-subline { margin-top: 12px !important; }
+.hero.phase-stage .hero-stage   { padding-top: 0 !important; }
+ 
+/* Same idea on smaller screens — keep the proportion. */
+@media (max-width: 1080px) {
+  .hero.hero-yellow.phase-stage .hero-primary {
+    font-size: clamp(38px, 6.2vw, 68px) !important;
+  }
+}
+@media (max-width: 920px) {
+  .hero.hero-yellow.phase-stage .hero-primary,
+  .hero-primary {
+    font-size: clamp(40px, 9.5vw, 64px) !important;
+  }
+  .hero.phase-stage .hero-title-block,
+  .hero.phase-intro .hero-title-block {
+    padding-top: 72px !important;
+    padding-bottom: 8px !important;
+  }
+}
+ 
+ 
+/* ---------- 3. Nav contrast + editorial polish on yellow hero ---------- */
+ 
+/* When the nav is at the top of the page (before the user scrolls),
+   force a saturated espresso color so links actually read against the
+   yellow. The Nav component's JS detector defaults to cream which gets
+   washed out — !important here wins because the JS sets color inline. */
+.nav:not(.scrolled) .nav-links a {
+  color: var(--espresso) !important;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.2s ease;
+}
+ 
+/* Subtle hover underline that grows from left — gives the nav an
+   editorial, polished feel without being heavy. */
+.nav:not(.scrolled) .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(.4, .0, .2, 1);
+}
+.nav:not(.scrolled) .nav-links a:hover::after { transform: scaleX(1); }
+.nav:not(.scrolled) .nav-links a:hover {
+  color: var(--orange) !important;
+}
+ 
+/* A little more breathing room between the nav links so the tracked
+   uppercase doesn't feel cramped. */
+.nav:not(.scrolled) .nav-links {
+  gap: 36px;
+}
+ 
+/* When the user scrolls and the nav switches to its "scrolled" state
+   (usually a darker pill bg), let the existing CSS handle color but
+   keep the editorial typography. */
+.nav.scrolled .nav-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+ 
+/* Mobile: dial back the tracking so things don't wrap awkwardly. */
+@media (max-width: 720px) {
+  .nav:not(.scrolled) .nav-links a,
+  .nav.scrolled .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .nav:not(.scrolled) .nav-links { gap: 20px; }
+}
