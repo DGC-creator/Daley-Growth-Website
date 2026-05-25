@@ -5,162 +5,6 @@ const { useEffect, useRef, useState } = React;
    redirect every "Book a call" CTA across the site. */
 const BOOKING_URL = "https://clientintake.daleygc.com";
 
-/* ---------------- Hero desk animation ----------------
-   Shows the digital employee acting on multiple tasks at once on
-   behalf of a real employee. Two sequenced ~6s scenarios play out
-   over ~13s before the H1 fades in over a dimmed version of the
-   animation.
-
-   Layout (per scenario):
-     LEFT  — the real employee's identity card + the trigger that
-             came in (an email, a calendar event).
-     CENTER — a small pulsing link representing the Digital Employee.
-     RIGHT — a live action stream: 4 completed tasks animate in
-             sequentially with timestamps and check marks, so the
-             viewer literally watches the digital employee multitask. */
-
-const HERO_DESK_SCENARIOS = [
-  {
-    industry: "REAL ESTATE",
-    person: {
-      name: "Sarah Chen",
-      role: "Listing Agent",
-      org: "Pacific Heights Realty",
-      initials: "SC",
-    },
-    trigger: {
-      kind: "EMAIL \u00b7 INBOUND",
-      meta: "9:14 AM",
-      from: "buyer.candace@gmail.com",
-      subject: "Tour request \u2014 12 Maple Ave",
-      body: "Saw the listing this morning, still available? Could tour Saturday.",
-    },
-    actions: [
-      { t: "0:08", label: "Lead qualified",  detail: "A\u2011score \u00b7 pre\u2011approved" },
-      { t: "0:23", label: "Tour booked",     detail: "Sat 2:30 PM \u00b7 confirmed" },
-      { t: "0:31", label: "CRM updated",     detail: "12 Maple \u00b7 buyer profile" },
-      { t: "0:47", label: "Brief dispatched", detail: "Sent to listing partner" },
-    ],
-    summary: { count: "4 actions", elapsed: "47 seconds" },
-  },
-  {
-    industry: "OPERATIONS",
-    person: {
-      name: "Marcus Patel",
-      role: "Chief Operations Officer",
-      org: "Ortega Industries",
-      initials: "MP",
-    },
-    trigger: {
-      kind: "CALENDAR \u00b7 UPCOMING",
-      meta: "TOMORROW",
-      from: "Q3 QBR \u00b7 10:00 AM",
-      subject: "Quarterly review \u2014 CEO + CFO",
-      body: "Q3 actuals vs plan, Q4 forecast, wins, risks, hiring. 60 minutes.",
-    },
-    actions: [
-      { t: "0:12", label: "Q3 actuals pulled",   detail: "Finance + ops dashboards" },
-      { t: "0:34", label: "Variance summarized", detail: "vs. plan \u00b7 auto\u2011drafted" },
-      { t: "1:18", label: "Pre\u2011read attached", detail: "Wins \u00b7 risks \u00b7 hiring" },
-      { t: "2:08", label: "Agenda dispatched",   detail: "To CEO, CFO, COO" },
-    ],
-    summary: { count: "4 actions", elapsed: "2 min 08 sec" },
-  },
-];
-
-function HeroDeskAnimation({ scenario, phase, idx, sceneCount }) {
-  const s = scenario;
-  return (
-    <div className={`hero-desk ${phase}`} aria-hidden="true" key={idx}>
-      {/* Scenario counter — tiny stamp top-left of the composition */}
-      <div className="hd-counter">
-        <span className="hd-counter-num">EXAMPLE {String(idx + 1).padStart(2, "0")} / {String(sceneCount).padStart(2, "0")}</span>
-        <span className="hd-counter-sep">//</span>
-        <span className="hd-counter-tag">{s.industry}</span>
-      </div>
-
-      <div className="hd-stage">
-        {/* LEFT — real employee + the trigger */}
-        <div className="hd-left">
-          <div className="hd-person" style={{ animationDelay: "0.05s" }}>
-            <div className="hd-person-avatar">
-              <span>{s.person.initials}</span>
-              <span className="hd-person-status" title="live"></span>
-            </div>
-            <div className="hd-person-meta">
-              <div className="hd-person-name">{s.person.name}</div>
-              <div className="hd-person-role">{s.person.role}</div>
-              <div className="hd-person-org">{s.person.org}</div>
-            </div>
-          </div>
-
-          <div className="hd-trigger" style={{ animationDelay: "0.35s" }}>
-            <div className="hd-trigger-head">
-              <span className="hd-trigger-kind">{s.trigger.kind}</span>
-              <span className="hd-trigger-meta">{s.trigger.meta}</span>
-            </div>
-            <div className="hd-trigger-from">{s.trigger.from}</div>
-            <div className="hd-trigger-subj">{s.trigger.subject}</div>
-            <div className="hd-trigger-body">&ldquo;{s.trigger.body}&rdquo;</div>
-          </div>
-        </div>
-
-        {/* CENTER — digital employee pulse link */}
-        <div className="hd-link" aria-hidden="true">
-          <div className="hd-link-line">
-            <span className="hd-link-pulse"></span>
-            <span className="hd-link-pulse hd-link-pulse-2"></span>
-            <span className="hd-link-pulse hd-link-pulse-3"></span>
-          </div>
-          <div className="hd-link-node">
-            <span className="hd-link-dot"></span>
-            <span className="hd-link-label">DIGITAL EMPLOYEE</span>
-            <span className="hd-link-sub">ON DUTY</span>
-          </div>
-        </div>
-
-        {/* RIGHT — action stream */}
-        <div className="hd-right">
-          <div className="hd-stream">
-            <div className="hd-stream-head">
-              <span className="hd-stream-title">ACTION STREAM</span>
-              <span className="hd-stream-live"><i></i>LIVE</span>
-            </div>
-            <ul className="hd-actions">
-              {s.actions.map((a, i) => (
-                <li
-                  key={i}
-                  className="hd-action"
-                  style={{ animationDelay: `${0.75 + i * 0.95}s` }}
-                >
-                  <span className="hd-action-time">{a.t}</span>
-                  <span className="hd-action-check" aria-hidden="true">
-                    <svg viewBox="0 0 14 14"><path d="M3 7.5 L6 10.5 L11 4.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </span>
-                  <span className="hd-action-text">
-                    <span className="hd-action-label">{a.label}</span>
-                    <span className="hd-action-detail">{a.detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="hd-summary" style={{ animationDelay: `${0.75 + s.actions.length * 0.95 + 0.25}s` }}>
-              <span className="hd-summary-num">{s.summary.count}</span>
-              <span className="hd-summary-sep">{"\u00b7"}</span>
-              <span className="hd-summary-time">in {s.summary.elapsed}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Slow progress tick along the bottom — paces the scene */}
-      <div className="hd-progress" aria-hidden="true">
-        <div className="hd-progress-fill" key={`p-${idx}`}></div>
-      </div>
-    </div>
-  );
-}
-
 /* ---------------- Reveal-on-scroll ---------------- */
 
 function useReveal() {
@@ -250,105 +94,257 @@ function Nav() {
   );
 }
 
-/* ---------------- Hero ---------------- */
+/* ---------------- Hero ----------------
+   Two-phase choreography (CSS-driven):
+     phase-intro  (0-3s)  big centered title + outlined serif subhead.
+                          Dashboard + CTAs invisible.
+     phase-stage  (3s+)   title shrinks, subhead crossfades to LIVE +
+                          agency badge + tasks-today counter, dashboard
+                          + CTAs fade in.
+   On mobile (≤920px) CSS skips the intro animation and shows the
+   stage layout immediately. */
 
-/* Tiny live-status pill — synced with the current scenario so the
-   readout reads "WORKING · REAL ESTATE" while that example is on screen. */
-function HeroStatus({ industry }) {
+/* Hero agent dashboard data — three AI agents working in parallel.
+   Each has identity, a queue of cycling ACTIVE TASKS (with realistic
+   durations), a feed of completed work with concrete outcomes, and a
+   daily stat. Edit here to tune copy without touching layout. */
+const HERO_AGENTS = [
+  {
+    name: "Maya",
+    role: "Inbox Operator",
+    initials: "MA",
+    accent: "rust",
+    avatarStyle: { background: "var(--orange)", color: "var(--cream)" },
+    nowQueue: [
+      { action: "Drafting reply", detail: "Tour request — 12 Maple Ave",   duration: 5400 },
+      { action: "Sorting inbox",  detail: "23 unread · ranked by intent",  duration: 4200 },
+      { action: "Following up",   detail: "Daniels Realty proposal",             duration: 5200 },
+    ],
+    feed: [
+      { task: "Booked Saturday 2:30 PM tour", outcome: "Sarah Chen · Pacific Heights Realty", ago: "2m ago" },
+      { task: "Routed RFP to legal",           outcome: "Ortega — NDA + MSA dispatched",       ago: "9m ago" },
+      { task: "Flagged 3 aging invoices",      outcome: "$18,400 surfaced for collections",         ago: "17m ago" },
+    ],
+    stat: { num: "47", label: "emails handled today" },
+  },
+  {
+    name: "Atlas",
+    role: "Research Analyst",
+    initials: "AT",
+    accent: "tan",
+    avatarStyle: { background: "var(--tan)", color: "var(--espresso)" },
+    nowQueue: [
+      { action: "Compiling Q3 variance", detail: "for tomorrow's CEO QBR",          duration: 6200 },
+      { action: "Sourcing benchmarks",   detail: "vendor pricing · 8 sources", duration: 5000 },
+      { action: "Drafting brief",        detail: "Series B competitive landscape",  duration: 5800 },
+    ],
+    feed: [
+      { task: "CEO pre-read drafted",       outcome: "1,240 words · 14 citations", ago: "4m ago" },
+      { task: "Vendor benchmark pulled",    outcome: "12 quotes · top 3 ranked",   ago: "11m ago" },
+      { task: "Customer calls synthesized", outcome: "8 interviews · 23 insights", ago: "19m ago" },
+    ],
+    stat: { num: "8", label: "briefs delivered today" },
+  },
+  {
+    name: "Sage",
+    role: "Operations Manager",
+    initials: "SA",
+    accent: "blue",
+    avatarStyle: { background: "var(--blue)", color: "var(--espresso)" },
+    nowQueue: [
+      { action: "Reconciling invoices",   detail: "127 line items · 4 vendors",    duration: 5600 },
+      { action: "Syncing CRM ↔ ERP", detail: "412 records · checking diffs",  duration: 4800 },
+      { action: "Triaging tickets",       detail: "P1 queue · 6 in flight",        duration: 5400 },
+    ],
+    feed: [
+      { task: "Updated CRM for 14 leads",    outcome: "Scored, tagged, routed to reps",   ago: "3m ago" },
+      { task: "Resolved 6 P1 tickets",       outcome: "Avg response time: 11 minutes",    ago: "10m ago" },
+      { task: "Generated weekly ops report", outcome: "Delivered to exec team",           ago: "18m ago" },
+    ],
+    stat: { num: "$4,200", label: "in errors caught today" },
+  },
+];
+
+/* Single agent card. Cycles through its own task queue so the three
+   cards feel asynchronous (each starts on a different task). */
+function AgentCard({ agent, agentIdx }) {
+  const queueLen = agent.nowQueue.length;
+  const [nowIdx, setNowIdx] = useState(agentIdx % queueLen);
+  const tick = agent.nowQueue[nowIdx];
+
+  useEffect(() => {
+    const advance = setTimeout(() => {
+      setNowIdx((i) => (i + 1) % queueLen);
+    }, tick.duration + 400);
+    return () => clearTimeout(advance);
+  }, [nowIdx, tick.duration, queueLen]);
+
   return (
-    <div className="hero-status" aria-hidden="true">
-      <span className="hs-dot"></span>
-      <span className="hs-text">WORKING &middot; {industry}</span>
+    <div className={`ha-card ha-card-${agent.accent}`}>
+      <header className="ha-card-head">
+        <div className="ha-avatar" style={agent.avatarStyle}>
+          <span>{agent.initials}</span>
+        </div>
+        <div className="ha-id">
+          <div className="ha-name">{agent.name}</div>
+          <div className="ha-role">{agent.role}</div>
+        </div>
+        <div className="ha-pulse" aria-hidden="true"><span></span></div>
+      </header>
+
+      <div className="ha-now">
+        <div className="ha-now-label">
+          <span className="ha-now-spinner" aria-hidden="true"></span>
+          <span>ACTIVE TASK</span>
+        </div>
+        <div className="ha-now-action">{tick.action}</div>
+        <div className="ha-now-detail">{tick.detail}</div>
+        <div className="ha-now-bar">
+          {/* `key` resets the CSS animation on every task swap */}
+          <span
+            key={nowIdx}
+            className="ha-now-fill"
+            style={{ animationDuration: `${tick.duration}ms` }}
+          ></span>
+        </div>
+      </div>
+
+      <div className="ha-feed">
+        <div className="ha-feed-label">JUST COMPLETED</div>
+        <ul>
+          {agent.feed.map((item, i) => (
+            <li
+              key={i}
+              className="ha-feed-item"
+              style={{ animationDelay: `${0.6 + agentIdx * 0.25 + i * 0.55}s` }}
+            >
+              <span className="ha-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14"><path d="M3 7.5 L6 10.5 L11 4.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </span>
+              <div className="ha-feed-text">
+                <div className="ha-feed-task">{item.task}</div>
+                <div className="ha-feed-outcome">{item.outcome}</div>
+              </div>
+              <div className="ha-feed-time">{item.ago}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <footer className="ha-card-foot">
+        <div className="ha-stat">
+          <span className="ha-stat-num">{agent.stat.num}</span>
+          <span className="ha-stat-label">{agent.stat.label}</span>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function HeroAgentDashboard() {
+  return (
+    <div className="hero-agents" aria-hidden="true">
+      <div className="ha-grid">
+        {HERO_AGENTS.map((agent, i) => (
+          <AgentCard key={agent.name} agent={agent} agentIdx={i} />
+        ))}
+      </div>
     </div>
   );
 }
 
 function Hero() {
-  const [idx, setIdx] = useState(0);
-  const [phase, setPhase] = useState("in");
-  const [titled, setTitled] = useState(false);
+  const [phase, setPhase] = useState("intro");
 
-  /* Choreography
-     ───────────────────────────────────────────────────────────────
-     Each scenario plays for ~6.0s (hold) + 0.55s crossfade.
-     After both have played once (≈13s total) the H1 fades in over
-     a dimmed version of the animation. The scenarios keep cycling
-     softly in the background after that.                            */
   useEffect(() => {
-    /* Action stream timing: actions start at 0.75s, spaced 0.95s, last
-       one finishes ~4.15s, summary lands ~5.4s. Hold 2s past that so
-       each scenario fully settles before the crossfade. */
-    const SCENE_HOLD = 7500;
-    const FADE = 550;
-    const timers = [];
-
-    function step() {
-      const t1 = setTimeout(() => {
-        setPhase("out");
-        const t2 = setTimeout(() => {
-          setIdx((i) => (i + 1) % HERO_DESK_SCENARIOS.length);
-          setPhase("in");
-          step();
-        }, FADE);
-        timers.push(t2);
-      }, SCENE_HOLD);
-      timers.push(t1);
-    }
-    step();
-
-    const reveal = setTimeout(
-      () => setTitled(true),
-      SCENE_HOLD * HERO_DESK_SCENARIOS.length + FADE
-    );
-    timers.push(reveal);
-
-    return () => timers.forEach(clearTimeout);
+    const t = setTimeout(() => setPhase("stage"), 3000);
+    return () => clearTimeout(t);
   }, []);
 
-  const s = HERO_DESK_SCENARIOS[idx];
+  /* Live tasks-today counter — only ticks once we're in stage phase. */
+  const [tasksToday, setTasksToday] = useState(62);
+  useEffect(() => {
+    if (phase !== "stage") return;
+    const i = setInterval(() => setTasksToday((t) => t + 1), 3400);
+    return () => clearInterval(i);
+  }, [phase]);
 
   return (
     <section
-      className={`hero hero-yellow ${titled ? "hero-titled" : "hero-demo"}`}
+      className={`hero hero-yellow phase-${phase}`}
       id="top"
       data-bg="light"
     >
-      <HeroDeskAnimation scenario={s} phase={phase} idx={idx} sceneCount={HERO_DESK_SCENARIOS.length} />
-
-      {/* Dim layer + radial vignette behind the title — appears with
-          .hero-titled to pull contrast up so the H1 reads cleanly
-          over the animation. */}
-      <div className="hero-title-scrim" aria-hidden="true"></div>
-      <div className="hero-vignette"></div>
-
-      {/* Top corner readouts — operations control vibe */}
-      <div className="hero-readouts" aria-hidden="true">
-        <div className="hero-readout left">
-          <span className="hr-tag">DGC</span>
-          <span className="hr-sep">//</span>
-          <span className="hr-val">DIGITAL EMPLOYEE NETWORK</span>
+      {/* ---- Top: title + subline (crossfades) ---- */}
+      <div className="hero-title-block">
+        {/* Eyebrow above the title — intro only. Fills the negative
+            space between nav and headline with two dashed rules
+            flanking a small rotating brand glyph + studio tagline. */}
+        <div className="hero-eyebrow" aria-hidden="true">
+          <span className="he-line"></span>
+          <span className="he-mark">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => {
+                const a = ((i * 72 - 90) * Math.PI) / 180;
+                const cx = 12 + Math.cos(a) * 8;
+                const cy = 12 + Math.sin(a) * 8;
+                return (
+                  <g key={i}>
+                    <line x1="12" y1="12" x2={cx} y2={cy} stroke="currentColor" strokeWidth="0.9" opacity="0.45" />
+                    <circle cx={cx} cy={cy} r="1.6" fill="currentColor" opacity="0.85" />
+                  </g>
+                );
+              })}
+              <circle cx="12" cy="12" r="2.4" fill="currentColor" />
+            </svg>
+          </span>
+          <span className="he-text">Daley Growth Consulting · Operational AI Studio</span>
+          <span className="he-line"></span>
         </div>
-        <HeroStatus industry={s.industry} />
-      </div>
 
-      {/* Center stamp shown ONLY during the demo phase. Fades away as
-          the H1 takes over. */}
-      <div className="hero-demo-stamp" aria-hidden="true">
-        <span className="hds-dot"></span>
-        <span className="hds-text">LIVE · DIGITAL EMPLOYEE AT WORK</span>
-      </div>
-
-      <div className="wrap hero-inner">
-        <h1 className="reveal hero-primary" data-delay="1">
-          We build digital employees<br />
-          that produce measurable outcomes in your business
+        <h1 className="hero-primary">
+          We build and manage digital employees for your business
         </h1>
 
-        <div className="hero-headline reveal" data-delay="2">
-          <span className="beat">AI for executives and operations teams.</span>
+        <div className="hero-subline" aria-live="polite">
+          <span className="hero-sub hero-sub-intro">
+            AI for executives and operations teams.
+          </span>
+          <span className="hero-sub hero-sub-stage">
+            <span className="hss-client" title="Demo client — agencies are a core client type for DGC">
+              <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true">
+                <circle cx="6" cy="6" r="2.2" fill="currentColor" />
+                <circle cx="2" cy="3" r="1" fill="currentColor" />
+                <circle cx="10" cy="3" r="1" fill="currentColor" />
+                <circle cx="2" cy="9" r="1" fill="currentColor" />
+                <circle cx="10" cy="9" r="1" fill="currentColor" />
+              </svg>
+              <span className="hss-client-name">Example Agency</span>
+              <span className="hss-client-tag">Creative Agency</span>
+            </span>
+            <span className="hss-mark">
+              <span className="hss-dot"></span>LIVE
+            </span>
+            <span className="hss-text">
+              Watch 3 AI agents work in parallel for your team
+            </span>
+            <span className="hss-counter">
+              <span className="hss-counter-num">{tasksToday.toLocaleString()}</span>
+              <span className="hss-counter-arrow">{"↑"}</span>
+              <span className="hss-counter-label">tasks today</span>
+            </span>
+          </span>
         </div>
+      </div>
 
-        <div className="hero-actions reveal" data-delay="3">
+      {/* ---- Middle: agent dashboard ---- */}
+      <div className="hero-stage">
+        <HeroAgentDashboard />
+      </div>
+
+      {/* ---- Bottom: CTAs ---- */}
+      <div className="hero-bottom">
+        <div className="hero-actions">
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary lg">
             Book a Discovery Call
             <ArrowIcon />
@@ -357,13 +353,6 @@ function Hero() {
             See how it works
             <span className="arrow">↓</span>
           </a>
-        </div>
-      </div>
-
-      <div className="wrap hero-meta">
-        <div>Daley Growth Consulting · Est. 2025</div>
-        <div className="scroll-cue">
-          <span>Scroll</span><span className="line"></span>
         </div>
       </div>
     </section>
