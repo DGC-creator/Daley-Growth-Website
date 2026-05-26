@@ -323,6 +323,69 @@ section { position: relative; }
   color: var(--espresso);
 }
 
+/* ---------- Tech texture overlay (yellow hero ONLY) ----------
+   Two stacked layers, both pointer-events:none, z-index:0 so they
+   sit under .hero-title-block (z:3) and .hero-stage / .hero-bottom (z:2).
+ 
+   ::before — static "circuit board" wallpaper:
+     - fine espresso dot grid (radial-gradient @ 22px)
+     - inline-SVG circuit tile w/ traces + nodes (160px)
+     - masked w/ a radial fade so it dies into the existing
+       yellow->sunlight radial gradients at the corners, keeping
+       the headline area calm.
+ 
+   ::after — slow downward "scan beam":
+     - thin espresso band w/ soft falloff, multiply-blended into
+       the yellow so it darkens the texture beneath as it passes.
+     - 9s linear loop. Disabled under prefers-reduced-motion. */
+.hero.hero-yellow::before,
+.hero.hero-yellow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.hero.hero-yellow::before {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(89, 44, 27, 0.22) 1px, transparent 1.6px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23592C1B' stroke-width='1' stroke-linecap='square' opacity='0.32'><path d='M20 20 H60 V52 H100 V92 H132'/><path d='M132 92 V128'/><path d='M20 108 H44 V136 H84'/><path d='M120 20 V44 H148'/><path d='M76 20 V36'/></g><g fill='%23592C1B' opacity='0.42'><circle cx='20' cy='20' r='2'/><circle cx='60' cy='52' r='1.8'/><circle cx='100' cy='92' r='2.2'/><circle cx='132' cy='92' r='1.6'/><circle cx='132' cy='128' r='1.8'/><circle cx='20' cy='108' r='1.8'/><circle cx='84' cy='136' r='2'/><circle cx='148' cy='44' r='1.8'/><circle cx='76' cy='36' r='1.6'/><rect x='98' y='50' width='4' height='4'/><rect x='42' y='106' width='4' height='4'/></g></svg>");
+  background-size: 22px 22px, 160px 160px;
+  background-position: 0 0, 0 0;
+  -webkit-mask-image: radial-gradient(120% 95% at 50% 60%, #000 30%, rgba(0,0,0,0.55) 65%, transparent 100%);
+          mask-image: radial-gradient(120% 95% at 50% 60%, #000 30%, rgba(0,0,0,0.55) 65%, transparent 100%);
+  opacity: 0.9;
+}
+ 
+.hero.hero-yellow::after {
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      rgba(89, 44, 27, 0.00) 40%,
+      rgba(89, 44, 27, 0.10) 49%,
+      rgba(89, 44, 27, 0.18) 50%,
+      rgba(89, 44, 27, 0.10) 51%,
+      rgba(89, 44, 27, 0.00) 60%,
+      transparent 100%);
+  background-size: 100% 220%;
+  background-repeat: no-repeat;
+  background-position: 0 -25%;
+  mix-blend-mode: multiply;
+  animation: heroScan 9s linear infinite;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+}
+ 
+@keyframes heroScan {
+  0%   { background-position: 0 -25%; }
+  100% { background-position: 0 125%; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .hero.hero-yellow::after { animation: none; opacity: 0.5; }
+}
+
 /* On yellow, the AI network is the star — keep it crisp, no opacity dip. */
 .hero.hero-yellow .hero-canvas { opacity: 1; }
 
